@@ -26,7 +26,10 @@ return {
 			})
 			lspconfig.jdtls.setup({
 				capabilities = capabilities,
-			})
+        init_options = {
+          bundles = { vim.fn.expand("~/.config/nvim/java-debug/com.microsoft.java.debug.plugin/target/com.microsoft.java.debug.plugin.0.52.0.jar") }
+        }
+      })
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, {})
